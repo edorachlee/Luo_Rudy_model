@@ -1,0 +1,1 @@
+[y0 data] = init_LR1();
