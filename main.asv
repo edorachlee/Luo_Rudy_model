@@ -8,10 +8,10 @@ WRAPPER_DEBUG = 0;
 dx = 0.025;
 dt = 0.2;
 
-stim_size = 200;
+stim_size = 120;
 stim_time = [0 0.5];
 t_span = (0:dt:500);
-cell_num = 15;
+cell_num = 5;
 
 D = 0.00154;
 
@@ -60,10 +60,8 @@ for i = 1:(length(t_span)-1)
         end
     end
     %disp(dV_cells)
-     
-    %update cable with axial currents
-    cable_state_snapshot(:, 1) = cable_state_snapshot(:, 1) + dV_cells.';
-    cable_V(i, :) = cable_state_snapshot(:, 1);
+    cable_V(i, :) = cable_V(i, :) + dV_cells; %update cable with axial currents
+    cable_state_snapshot(:, 1) = 
 end
 
 cable_V(end, :) = cable_V(end-1, :);
