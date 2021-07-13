@@ -14,6 +14,7 @@ t_span = (0:dt:500);
 cell_num = 15;
 
 D = 0.00154;
+g = (1.2/dx^2) / 1000; %mS/cm^2, 0.6 ~ 2.5
 
 options = [];
 
@@ -56,7 +57,8 @@ for i = 1:(length(t_span)-1)
                 diff = cable_V(i, n+1) - 2 * cable_V(i, n) + cable_V(i, n-1);
             end
 
-            dV_cells(n) = diff * D / dx^2 * dt;
+            %dV_cells(n) = diff * D / dx^2 * dt;
+            dV_cells(n) = diff * g / data.C * dt;
         end
     end
     %disp(dV_cells)
