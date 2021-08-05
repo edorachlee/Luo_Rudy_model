@@ -1,7 +1,9 @@
+% Name: calc_IK
+% Purpose: Calculate fast sodium current[Inward]
 function [INa, am, bm, ah, bh, aj, bj] = calc_INa(V, m, h, j, data)
-
     ENa = data.RTF * log(data.Nao/data.Nai); % mV (since data.RTF is in mV)
     INa = data.GNa * ( m^3 ) * h * j * ( V - ENa ); %uA/cm^2
+    % Unit conversion: 
     %mS/cm^2 * mV = 10e-3/(ohm*cm^2) * 10e-3 * V = 10e-6 * V/(ohm*cm^2) 
     %= 10e-6 * A/cm^2 = uA/cm^2
 

@@ -1,5 +1,6 @@
+% Name: calc_IK1
+% Purpose: Calculate time-independent potassium current[Outward]
 function IK1 = calc_IK1(V, data)
-    
     GK1 = 0.6047 * sqrt( data.Ko / 5.4 );
     EK1 = data.RTF * log( data.Ko / data.Ki );
     aK1 = 1.02 / ( 1 + exp( 0.2385 * ( V - EK1 - 59.215 ) ) );

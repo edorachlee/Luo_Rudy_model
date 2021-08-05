@@ -1,3 +1,7 @@
+% Name: plot_voltage
+% Purpose: Use this file to plot voltage values of cable after simulation ends.
+% If the cable has many cells, change cell_num in figure(2) to plot the first X number of cells.
+
 close all
 figure(1)
 for n=1:cell_num

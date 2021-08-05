@@ -1,1 +1,0 @@
-function cable_V = cable_wrapper(cell_model, cell_num)
